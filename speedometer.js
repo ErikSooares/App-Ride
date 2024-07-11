@@ -11,7 +11,7 @@ btnStart.addEventListener("click", ()=>{
             speedElement.innerText = 0;
         }
         else{
-            speedElement.innerText = parseInt(position.coords.speed) * 3.6;
+            speedElement.innerText = parseInt(position.coords.speed * 3.6);
         }
         console.log(position)
     }
