@@ -2,6 +2,8 @@ const speedElement = document.querySelector("#speed");
 const btnStart = document.querySelector("#btnStart");
 const btnStop = document.querySelector("#btnStop");
 
+let watchID = null;
+
 btnStart.addEventListener("click", ()=>{
 
     function handleSuccess(position){
@@ -20,13 +22,19 @@ btnStart.addEventListener("click", ()=>{
 
     const options = {enableHighAccuracy: true}
 
-    navigator.geolocation.watchPosition(handleSuccess, handleError, options)
+    watchID = navigator.geolocation.watchPosition(handleSuccess, handleError, options)
 
     btnStart.classList.add("d-none");
     btnStop.classList.remove("d-none");
 })
 
 btnStop.addEventListener("click", ()=>{
+
+    navigator.geolocation.clearWatch(watchID)
+    watchID = null
+
+    speedElement.innerText = 0;
+
     btnStart.classList.remove("d-none");
     btnStop.classList.add("d-none");
 })
