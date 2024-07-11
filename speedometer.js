@@ -7,7 +7,7 @@ let watchID = null;
 btnStart.addEventListener("click", ()=>{
 
     function handleSuccess(position){
-        speedElement.innerHTML = position.coords.speed ? parseInt(position.coords.speed * 3.6).toFixed(1) : 0;
+        speedElement.innerHTML = position.coords.speed ? parseInt(position.coords.speed * 3.6) : 0;
     }
 
     function handleError(position){
