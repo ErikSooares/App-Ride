@@ -9,7 +9,7 @@ btnStart.addEventListener("click", ()=>{
 
     function handleSuccess(position){
         addPosition(currentRide, position);
-        speedElement.innerHTML = position.coords.speed ? (position.coords.speed * 3.6).toFixed(1) : 0;
+        speedElement.innerHTML = position.coords.speed ? parseInt(position.coords.speed * 3.6) : 0;
     }
 
     function handleError(position){
