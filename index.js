@@ -6,14 +6,14 @@ allRides.forEach(async ([id, value]) => {
     const ride = JSON.parse(value)
     ride.id = id
 
-
-    const firstPosition = ride.data[0];
-    const firstLocationData = await getLocationData(firstPosition.latitude, firstPosition.longitude);
-    console.log(await getLocationData(firstPosition.latitude, firstPosition.longitude))
-
     const itemElement = document.createElement("li");
     itemElement.id = ride.id;
     itemElement.className = "d-flex p-1 align-items-center justify-content-between shadow-sm gap-3"
+    rideListELement.appendChild(itemElement)
+
+    const firstPosition = ride.data[0];
+    const firstLocationData = await getLocationData(firstPosition.latitude, firstPosition.longitude);
+    // console.log(await getLocationData(firstPosition.latitude, firstPosition.longitude))
 
     const mapElement = document.createElement("div")
     mapElement.style = "width: 100px; height: 100px";
@@ -49,8 +49,6 @@ allRides.forEach(async ([id, value]) => {
 
     itemElement.appendChild(mapElement)
     itemElement.appendChild(dataElement)
-
-    rideListELement.appendChild(itemElement)
 })
 
 async function getLocationData(latitude, longitude) {
@@ -135,5 +133,5 @@ function getStartDate(ride){
     const hour = d.toLocaleString("en-US", {hour: "2-digit", hour12:false})
     const minute = d.toLocaleString("en-US", {minute: "2-digit"})
 
-    return `${hour}:${minute} - ${day} ${month}, ${year}`
+    return `${hour}:${String(minute.padStart(2, '0'))} - ${day} ${month}, ${year}`
 }
