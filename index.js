@@ -24,10 +24,10 @@ allRides.forEach(async ([id, value]) => {
     distanceDiv.innerText = `Distance: ${getDistance(ride.data)} km`
 
     const durationDiv = document.createElement("div")
-    durationDiv.innerText = `Duration: ${getDuration(ride)} km`
+    durationDiv.innerText = `Duration: ${getDuration(ride)}`
 
     const dateDiv = document.createElement("div")
-    dateDiv.innerText = `Date: ${getStartDate(ride)} km`
+    dateDiv.innerText = `${getStartDate(ride)}`
 
     itemElement.appendChild(cityDiv)
     itemElement.appendChild(maxSpeedDiv)
