@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         maxZoom: 19,
     }).addTo(map);
 
-    ride.data.map((position)=>{
+    const positionArray = ride.data.map((position)=>{
         return [position.latitude, position.longitude]
     })
 
