@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./global.css">
+
+    <title>Ride</title>
+</head>
+
+<body class="h-100">
+
+    <div class="container d-flex flex-column h-100">
+        <nav class="navbar justify-content-end">
+            <a class="btn btn-close border border-dark p-2" href="./index.html"></a>
+        </nav>
+        <div id="mapDetail" class="rounded-4">
+
+        </div>
+        <div class="d-flex flex-column justify-content-between flex-fill mt-3 mb-3">
+            <div id="data">
+
+            </div>
+            <button class="btn btn-danger"><span class="display-6">Delete</span></button>
+        </div>
+    </div>
+
+    <script src="./storage.js"></script>
+    <script src="./dataManager.js"></script>
+    <script src="./detail.js"></script>
+</body>
+
+</html>
