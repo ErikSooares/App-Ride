@@ -8,7 +8,7 @@ allRides.forEach(async ([id, value]) => {
 
     const itemElement = document.createElement("li");
     itemElement.id = ride.id;
-    itemElement.className = "d-flex p-1 align-items-center justify-content-between shadow-sm gap-3"
+    itemElement.className = "d-flex p-3 align-items-center justify-content-between shadow-sm gap-3"
     rideListELement.appendChild(itemElement)
 
     itemElement.addEventListener("click", () => {
@@ -21,7 +21,7 @@ allRides.forEach(async ([id, value]) => {
     const mapId = `map${ride.id}`;
     const mapElement = document.createElement("div")
     mapElement.id = mapId
-    mapElement.style = "width: 100px; height: 100px";
+    mapElement.style = "width: 150px; height: 150px";
     mapElement.classList.add("bg-secondary")
     mapElement.classList.add("rounded-4")
 
