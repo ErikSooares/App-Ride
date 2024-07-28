@@ -37,13 +37,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelector("#data").appendChild(dataElement)
 
     const map = L.map("mapDetail")
-
     map.setView([firstPosition.latitude, firstPosition.longitude], 15)
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
     }).addTo(map);
 
+    ride.data.map((position)=>{
+        return [position.latitude, position.longitude]
+    })
+
+    const polyline = L.polyline(positionArray, {color: "#F00"})
+    polyline.addTo(map)
+
+    map.fitBounds(polyline.getBounds())
 })
 
 const btnDelete = document.querySelector("#btnDelete");
