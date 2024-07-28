@@ -35,5 +35,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     dataElement.appendChild(dateDiv)
 
     document.querySelector("#data").appendChild(dataElement)
+})
 
+const btnDelete = document.querySelector("#btnDelete");
+
+btnDelete.addEventListener("click", (ride)=>{
+    localStorage.clear(ride)
 })
