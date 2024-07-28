@@ -35,10 +35,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     dataElement.appendChild(dateDiv)
 
     document.querySelector("#data").appendChild(dataElement)
+
+    const map = L.map("mapDetail")
+
+    map.setView([firstPosition.latitude, firstPosition.longitude], 15)
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+    }).addTo(map);
+
 })
 
 const btnDelete = document.querySelector("#btnDelete");
 
-btnDelete.addEventListener("click", (ride)=>{
+btnDelete.addEventListener("click", (ride) => {
     localStorage.clear(ride)
 })
