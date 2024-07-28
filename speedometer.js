@@ -37,4 +37,6 @@ btnStop.addEventListener("click", ()=>{
 
     btnStart.classList.remove("d-none");
     btnStop.classList.add("d-none");
+
+    window.location.href = "./index.html"
 })

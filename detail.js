@@ -35,7 +35,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     dataElement.appendChild(dateDiv)
 
     document.querySelector("#data").appendChild(dataElement)
+    mapView(firstPosition)
+})
 
+function mapView(firstPosition){
     const map = L.map("mapDetail")
     map.setView([firstPosition.latitude, firstPosition.longitude], 15)
 
@@ -51,10 +54,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     polyline.addTo(map)
 
     map.fitBounds(polyline.getBounds())
-})
+}
 
 const btnDelete = document.querySelector("#btnDelete");
 
-btnDelete.addEventListener("click", (ride) => {
-    localStorage.clear(ride)
+btnDelete.addEventListener("click", () => {
+    deleteRide(rideId)
+    window.location.href = "./index.html"
 })
